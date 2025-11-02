@@ -1,17 +1,17 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
-  server: {
-    port: 3000,
-  },
   build: {
-    outDir: 'dist',
+    lib: {
+      entry: 'src/web-component.ts',
+      name: 'WalletModal',
+      fileName: (format) => `wallet-modal.${format}.js`,
+      formats: ['es', 'umd']
+    }
   },
-});
+  define: {
+    'process.env': {}
+  }
+})

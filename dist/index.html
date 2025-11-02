@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wallet Modal Web Component Demo</title>
   <link rel="stylesheet" href="./my-vue-ts-app.css">
 </head>
 <body>
-  <wallet-modal model-value="true"></wallet-modal>
+  <wallet-modal></wallet-modal>
   <script type="module" src="./wallet-modal.es.js"></script>
+  <script>
+    document.querySelector('wallet-modal').modelValue = true;
+  </script>
 </body>
 </html>
